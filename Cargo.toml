@@ -1,0 +1,52 @@
+[package]
+name = "main_flash"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bytes = "1.2.1"
+rand = "0.8.5"
+dotenv = "0.15.0"
+hashbrown = "0.14.0"
+tokio = { version = "1.29.0", features = ["full"] }
+tokio-stream = { version = "0.1", features = ['sync'] }
+log = "0.4.17"
+url = "2.3.1"
+rayon = "1.5.1"
+serde = "1.0.145"
+serde_json = "1.0"
+anyhow = "1.0.71"
+reqwest = "0.11.12"
+thiserror = "1.0.37"
+env_logger = "0.9"
+petgraph = "0.6.4"
+hex-literal = "0.4.1"
+uniswap_v3_math = "0.4.1"
+tokio-scoped = "0.2.0"
+dashmap = "5.5.3"
+arrayvec = "0.7.4"
+
+# EVM based crates
+amms = { path = "../amms-rs"}
+ethers-flashbots = { git = "https://github.com/onbjerg/ethers-flashbots", version = "0.15.0" }
+ethers-providers = "2.0"
+ethers-core = "2.0"
+ethers-contract = { version = "2.0", default-features = false }
+ethers = {version = "2.0", features = ["abigen", "ws", "rustls"]}
+
+# logging
+fern = {version = "0.6.2", features = ["colored"]}
+chrono = "0.4.23"
+csv = "1.2.2"
+indicatif = "0.17.5"
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+# Development profile with faster compile times
+[profile.dev]
+opt-level = 1
+
+# Optimize external dependencies even on dev profile
+[profile.dev.package."*"]
+opt-level = 3

@@ -1,0 +1,207 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_mainCurrency",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      }
+    ],
+    "name": "AddressEmptyCode",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "AddressInsufficientBalance",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FailedInnerCall",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "SafeERC20FailedOperation",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "router",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "tokens",
+        "type": "address[]"
+      },
+      {
+        "internalType": "bool",
+        "name": "force",
+        "type": "bool"
+      }
+    ],
+    "name": "approveRouter",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "mainCurrency",
+    "outputs": [
+      {
+        "internalType": "contract IWETH",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "header",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool[]",
+        "name": "protocols",
+        "type": "bool[]"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "v3data",
+        "type": "bytes[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "v3routers",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "v2tokens",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address[]",
+        "name": "v2routers",
+        "type": "address[]"
+      }
+    ],
+    "name": "makeArbHop",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "remainingBalance",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IERC20[]",
+        "name": "tokens",
+        "type": "address[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "amounts",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "receiveFlashLoan",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "recoverEth",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "recoverToken",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "receive"
+  }
+]

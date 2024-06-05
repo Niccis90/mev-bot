@@ -1,0 +1,7 @@
+/target
+.v3info
+.sync_cache
+logs.txt
+*.sqlite
+*.log*
+amm_*
