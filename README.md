@@ -1,45 +1,37 @@
-# mev-bot
+#MEV-Bot (Searcher)
+Authors: Nicolas Natchev (@Niccis90) and Eelis Holmstén (@Eelishz)
+#Overview
+The MEV-Bot (Searcher) is an advanced automated trading bot designed to exploit arbitrage opportunities within decentralized finance (DeFi) ecosystems. Key features of the bot include:
 
-This is an mev bot (searcher) written by Nicolas Natchev (@Niccis90) and Eelis Holmstén (@Eelishz).
+- Graph representation of prices.
+- Multi-threaded depth-first search for arbitrage opportunities.
+- Asynchronous architecture leveraging Tokio and Channels.
+- Trade size optimization.
+- Blacklisting of non-performing pools.
+- Compatibility with Uniswap V2/V3 pools and flash loans.
+- Trade simulation.
+- Project Objectives
+The primary objective of this project was to develop a profitable MEV searcher utilizing atomic arbitrage strategies.
 
-The bot features:
+#Key Learnings
+The project presented numerous complexities beyond initial expectations. Key challenges encountered include:
 
-   - A graph representation of prices
-   - Multi-threaded depth first search of arbitrage opportunities
-   - Asynchronous architecture using Tokio and Channels
-   - Trade size optimization
-   - Blacklisting of bad pools
-   - Uniswap V2/V3 pools and flash loans
-   - Trade simulation
+ -Learning Rust's Async Model: Mastering Rust’s asynchronous features was crucial for handling long-running, multi-threaded processes and network requests.
+ -Multithreaded Architecture: Designing an efficient multi-threaded system to optimize performance.
+ -Database Schema Design and SQL: Initially, a database approach was considered but later replaced by in-memory native data structures for efficiency.
+ -Solidity Programming: Gaining proficiency in Solidity, the primary language for Ethereum smart contracts.
+ -Blockchain Security: Implementing robust security measures within the blockchain environment.
+ -Cloud Hosting via AWS: Co-locating with Bundle providers as per Flashbots documentation.
+ -Running an Ethereum Node: Ensuring a reliable and efficient Ethereum node setup.
+ -Large Project Management: Managing a large-scale project using Git and adhering to effective project management practices.
+ -Uniswap V2/V3 Implementation: Reading, understanding, and partially implementing the specifications of Uniswap V2 and V3.
+#Technology Choices
+We selected Rust as our primary programming language due to its performance and familiarity. Rust’s asynchronous capabilities were particularly beneficial for managing long-running processes and network requests. However, Rust’s complexity, especially when mixing asynchronous and synchronous code, posed significant challenges.
 
-## Goals of the project
+We utilized Channels to synchronize recursion and multi-threading within an asynchronous event loop. The need for standardized code styles became evident, reinforcing the importance of common standards and style consistency.
 
-The main goal of the project was to create a profitable MEV searcher using atomic arbitrage.
+#Ethereum Virtual Machine (EVM) Integration
+Understanding and integrating with the Ethereum Virtual Machine (EVM) and Solidity posed substantial challenges. Setting up a testing environment, utilizing a debugger, and deploying code on the blockchain required significant effort. Interoperability between Rust and the blockchain was complex due to the EVM’s larger native types.
 
-## Lessons learned
-
-This project was much more complicated than either one of us initially anticipated.
-
-Here is a non-exhaustive list of all the challenges we needed to tackle to complete this project:
-
-   - Learning Rust’s async model
-   - Multithreaded architecture
-   - Database schema design and SQL (this idea was eventually abandoned in favor of in memory native data structures)
-   - Learning Solidity (ethereum’s native language)
-   - Dealing with blockchain security
-   - Cloud hosting via AWS (Co-location with Bundle providers https://docs.flashbots.net/)
-   - Running an ethereum node
-   - Running a large project using git
-   - Project management
-   - Reading and understanding the spec of uniswap V2 and V3 and implementing parts of it ourselves
-
-We chose rust as our primary programming language for this project as we were both familiar with it and it is a reasonably fast compiled language. Rust’s async features proved invaluable when dealing with long running multi-threaded processes and network requests. The main weakness of Rust is its complexity. Mixing async and synchronous code was especially challenging. Things like recursion and multithreading are, as far as we can tell, very hard to implement in an async event loop, and need to be synchronized. Channels were a useful tool in this endeavor.
-
-Rust expressive syntax is a blessing and a curse. Our code styles are different and we would often find ourselves commenting on and refactoring each others’ code to a style which we viewed as “better”. This reinforced the need for common standards and style.
-
-Learning the EVM (Ethereum virtual machine) was also very challenging. The EVM uses solidity as its primary programming language, an OOP Java style programming language. Setting up a testing environment, using a debugger, and deploying your code, usually simple things, are very hard on the blockchain.
-
-Interop between Rust and the blockchain was also challenging since the EVM has much larger native types than regular languages.
-
-The search algo itself was also a challenge. In the end, the solution was quite simple and the final version of the DFS (depth first search) algorithm is quite straight forward.
-
+#Depth-First Search Algorithm
+The development of the search algorithm was a key focus. Ultimately, the final version of the depth-first search (DFS) algorithm was straightforward and efficient, effectively identifying profitable arbitrage opportunities.
