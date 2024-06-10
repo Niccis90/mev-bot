@@ -16,15 +16,15 @@ The primary objective of this project was to develop a profitable MEV searcher u
 # Key Learnings
 The project presented numerous complexities beyond initial expectations. Key challenges encountered include:
 
- -Learning Rust's Async Model: Mastering Rust’s asynchronous features was crucial for handling long-running, multi-threaded processes and network requests.
- -Multithreaded Architecture: Designing an efficient multi-threaded system to optimize performance.
- -Database Schema Design and SQL: Initially, a database approach was considered but later replaced by in-memory native data structures for efficiency.
- -Solidity Programming: Gaining proficiency in Solidity, the primary language for Ethereum smart contracts.
- -Blockchain Security: Implementing robust security measures within the blockchain environment.
- -Cloud Hosting via AWS: Co-locating with Bundle providers as per Flashbots documentation.
- -Running an Ethereum Node: Ensuring a reliable and efficient Ethereum node setup.
- -Large Project Management: Managing a large-scale project using Git and adhering to effective project management practices.
- -Uniswap V2/V3 Implementation: Reading, understanding, and partially implementing the specifications of Uniswap V2 and V3.
+ - Learning Rust's Async Model: Mastering Rust’s asynchronous features was crucial for handling long-running, multi-threaded processes and network requests.
+ - Multithreaded Architecture: Designing an efficient multi-threaded system to optimize performance.
+ - Database Schema Design and SQL: Initially, a database approach was considered but later replaced by in-memory native data structures for efficiency.
+ - Solidity Programming: Gaining proficiency in Solidity, the primary language for Ethereum smart contracts.
+ - Blockchain Security: Implementing robust security measures within the blockchain environment.
+ - Cloud Hosting via AWS: Co-locating with Bundle providers as per Flashbots documentation.
+ - Running an Ethereum Node: Ensuring a reliable and efficient Ethereum node setup.
+ - Large Project Management: Managing a large-scale project using Git and adhering to effective project management practices.
+ - Uniswap V2/V3 Implementation: Reading, understanding, and partially implementing the specifications of Uniswap V2 and V3.
 # Technology Choices
 We selected Rust as our primary programming language due to its performance and familiarity. Rust’s asynchronous capabilities were particularly beneficial for managing long-running processes and network requests. However, Rust’s complexity, especially when mixing asynchronous and synchronous code, posed significant challenges.
 
